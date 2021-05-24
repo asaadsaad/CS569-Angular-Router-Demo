@@ -18,9 +18,9 @@ export class QueryComponent {
 
 
   constructor(private activatedRoute: ActivatedRoute) {
-    this.subscription = activatedRoute.queryParams
+    this.subscription = activatedRoute.queryParamMap
       .subscribe(
-        (queries: any) => this.id = queries['id']
+        ({params}: any) => this.id = params['id']
       );
   }
 
