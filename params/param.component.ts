@@ -16,8 +16,8 @@ export class ParamComponent {
   id: string;
 
   constructor(private activatedRoute: ActivatedRoute) {
-    this.subscription = activatedRoute.params.subscribe(
-      (params: any) => this.id = params['id']
+    this.subscription = activatedRoute.paramMap.subscribe(
+      ({params}: any) => this.id = params['id']
     );
   }
 
